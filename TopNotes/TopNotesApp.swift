@@ -10,8 +10,9 @@ import SwiftUI
 @main
 struct TopNotesApp: App {
     var body: some Scene {
-        WindowGroup {
+		MenuBarExtra("TopNotes", systemImage: "pencil.and.outline") {
             ContentView()
         }
+		.menuBarExtraStyle(.window)
     }
 }
