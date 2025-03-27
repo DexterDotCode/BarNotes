@@ -11,6 +11,7 @@
 		BBCA9E6C2D946F6C00B3BE9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCA9E662D946F6C00B3BE9B /* Assets.xcassets */; };
 		BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E672D946F6C00B3BE9B /* ContentView.swift */; };
 		BBCA9E6E2D946F6C00B3BE9B /* TopNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E692D946F6C00B3BE9B /* TopNotesApp.swift */; };
+		BBCA9EBC2D95C8C800B3BE9B /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA9EBB2D95C8C800B3BE9B /* KeychainAccess */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBCA9EBC2D95C8C800B3BE9B /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,7 @@
 			);
 			name = TopNotes;
 			packageProductDependencies = (
+				BBCA9EBB2D95C8C800B3BE9B /* KeychainAccess */,
 			);
 			productName = TopNotes;
 			productReference = BBCA9E522D946F6100B3BE9B /* TopNotes.app */;
@@ -115,6 +118,9 @@
 			);
 			mainGroup = BBCA9E492D946F6100B3BE9B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				BBCA9EBA2D95C8C800B3BE9B /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BBCA9E532D946F6100B3BE9B /* Products */;
 			projectDirPath = "";
@@ -346,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BBCA9EBA2D95C8C800B3BE9B /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BBCA9EBB2D95C8C800B3BE9B /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBCA9EBA2D95C8C800B3BE9B /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BBCA9E4A2D946F6100B3BE9B /* Project object */;
 }

@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import KeychainAccess
 
 struct ContentView: View {
-	@AppStorage("notes") var notes: String = ""
 	@AppStorage("fontSize") var fontSize = 14.0
+	@State private var notes: String = ""
+	@State private var savingTask: Task<Void, Error>?
+	let keychain = Keychain(accessGroup: "com.dextercode.TopNotes")
+	
 	
 	var body: some View {
 		VStack {
@@ -25,9 +29,6 @@ struct ContentView: View {
 					Button("Decrease font size", systemImage: "textformat.size.larger") {
 						fontSize += 1
 					}
-					Button("Reset font size", systemImage: "arrow.counterclockwise") {
-						fontSize = 14
-					}
 				}
 				
 				ControlGroup {
@@ -42,6 +43,21 @@ struct ContentView: View {
 			}
 		}
 		.padding()
+		.onAppear(perform: loadNotes)
+		.onChange(of: notes, perform: saveNotes)
+	}
+	
+	func loadNotes() {
+		notes = keychain["notes"] ?? ""
+	}
+	
+	func saveNotes(newValue: String) {
+		savingTask?.cancel()
+		
+		savingTask = Task {
+			try await Task.sleep(for: .seconds(2))
+			keychain["notes"] = newValue
+		}
 	}
 }
 
