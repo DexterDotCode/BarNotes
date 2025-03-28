@@ -64,12 +64,12 @@
 		BBCA9E6A2D946F6C00B3BE9B /* TopNotes */ = {
 			isa = PBXGroup;
 			children = (
-				BBCA9E652D946F6C00B3BE9B /* Preview Content */,
-				BBCA9E662D946F6C00B3BE9B /* Assets.xcassets */,
-				BBCA9E672D946F6C00B3BE9B /* ContentView.swift */,
-				BBCA9E682D946F6C00B3BE9B /* TopNotes.entitlements */,
 				BBCA9E692D946F6C00B3BE9B /* TopNotesApp.swift */,
+				BBCA9E672D946F6C00B3BE9B /* ContentView.swift */,
 				BB87181E2D96801600918708 /* Customization+Extensions.swift */,
+				BBCA9E662D946F6C00B3BE9B /* Assets.xcassets */,
+				BBCA9E682D946F6C00B3BE9B /* TopNotes.entitlements */,
+				BBCA9E652D946F6C00B3BE9B /* Preview Content */,
 			);
 			path = TopNotes;
 			sourceTree = "<group>";
@@ -298,11 +298,12 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dextercode.TopNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -326,11 +327,12 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dextercode.TopNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};

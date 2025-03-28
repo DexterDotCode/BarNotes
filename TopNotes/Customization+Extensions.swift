@@ -22,120 +22,58 @@ enum FontDesign: String, CaseIterable, Identifiable {
 		}
 	}
 	
-	var icon: String {
-		switch self {
-			case .system: "Aa"
-			case .monospace: "00"
-			case .rounded: "Rr"
-			case .serif: "Ny"
-		}
-	}
-	
 	var description: String {
 		switch self {
-			case .system:
-				"San Francisco"
-			case .monospace:
-				"SF Mono"
-			case .rounded:
-				"SF Rounded"
-			case .serif:
-				"New York"
+			case .system: "San Francisco"
+			case .monospace: "SF Mono"
+			case .rounded: "SF Rounded"
+			case .serif: "New York"
 		}
 	}
 }
 
 
-enum fontColor: String, CaseIterable, Identifiable {
-	case Blue, Red, Yellow, Green, Purple, Indigo, Pink
+enum ThemeColors: String, CaseIterable, Identifiable {
+	case topNotes, blue, yellow, green, purple, indigo, pink, clear
 	
 	var id: Self { self }
 	
 	var description: String {
 		switch self {
-			case .Blue: "Blue"
-			case .Red: "Red"
-			case .Yellow: "Yellow"
-			case .Green: "Green"
-			case .Purple: "Purple"
-			case .Indigo: "Indigo"
-			case .Pink: "Pink"
+			case .topNotes: "Default"
+			case .blue: "Blue"
+			case .yellow: "Yellow"
+			case .green: "Green"
+			case .purple: "Purple"
+			case .indigo: "Indigo"
+			case .pink: "Pink"
+			case .clear: "Clear"
 		}
 	}
 	
-	var color: Color {
+	var bgColor: Color {
 		switch self {
-			case .Blue: .blue
-			case .Red: .red
-			case .Yellow: .yellow
-			case .Green: .green
-			case .Purple: .purple
-			case .Indigo: .indigo
-			case .Pink: .pink
+			case .topNotes: .bgDefault
+			case .blue: .bgBlue
+			case .yellow: .bgYellow
+			case .green: .bgGreen
+			case .purple: .bgPurple
+			case .indigo: .bgIndigo
+			case .pink: .bgPink
+			case .clear: .clear
 		}
 	}
-}
-
-
-enum CustomBGColor: String, CaseIterable, Identifiable {
-	case Blue, Red, Yellow, Green, Purple, Indigo, Pink
 	
-	var id: Self { self }
-	
-	var description: String {
+	var fontColor: Color {
 		switch self {
-			case .Blue: "TopNotes Blue"
-			case .Red: "Sunset Red"
-			case .Yellow: "Sunrise Yellow"
-			case .Green: "Grass Green"
-			case .Purple: "Plumshade"
-			case .Indigo: "Indigo"
-			case .Pink: "Pink"
+			case .topNotes: .fontDefault
+			case .blue: .fontBlue
+			case .yellow: .fontYellow
+			case .green: .fontGreen
+			case .purple: .fontPurple
+			case .indigo: .fontIndigo
+			case .pink: .fontPink
+			case .clear: .fontDefault
 		}
-	}
-	
-	var color: Color {
-		switch self {
-			case .Blue: .blue
-			case .Red: .red
-			case .Yellow: .yellow
-			case .Green: .green
-			case .Purple: .purple
-			case .Indigo: .indigo
-			case .Pink: .pink
-		}
-	}
-}
-
-
-extension Color {
-	public static let topNotesBlue = Color(hex: "111F34")
-}
-
-
-extension Color {
-	init(hex: String) {
-		let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
-		var int: UInt64 = 0
-		Scanner(string: hex).scanHexInt64(&int)
-		let a, r, g, b: UInt64
-		switch hex.count {
-			case 3: // RGB (12-bit)
-				(a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
-			case 6: // RGB (24-bit)
-				(a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
-			case 8: // ARGB (32-bit)
-				(a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
-			default:
-				(a, r, g, b) = (1, 1, 1, 0)
-		}
-		
-		self.init(
-			.sRGB,
-			red: Double(r) / 255,
-			green: Double(g) / 255,
-			blue:  Double(b) / 255,
-			opacity: Double(a) / 255
-		)
 	}
 }
