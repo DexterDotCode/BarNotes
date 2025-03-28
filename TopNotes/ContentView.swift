@@ -23,9 +23,11 @@ struct ContentView: View {
 				.foregroundStyle(fontColor.color)
 				.font(.system(size: fontSize))
 				.fontDesign(fontDesign.design)
+			
 			VStack {
 				HStack {
 					Spacer()
+					
 					Button {
 						showPopover.toggle()
 					} label: {
@@ -35,28 +37,49 @@ struct ContentView: View {
 				}
 			}
 			.popover(isPresented: $showPopover, attachmentAnchor: .point(.trailing), arrowEdge: .bottom) {
-				VStack(alignment: .leading, spacing: 15) {
-					Button("Decrease font size", systemImage: "textformat.size.smaller") {
-						fontSize -= 1
+				VStack(alignment: .leading, spacing: 20) {
+					VStack(alignment: .leading, spacing: 7) {
+						Text("Font Size")
+							.font(.subheadline)
+							.foregroundStyle(.secondary)
+						
+						ControlGroup {
+							Button("Decrease font size", systemImage: "textformat.size.smaller") {
+								fontSize -= 1
+							}
+							Button("Increase font size", systemImage: "textformat.size.larger") {
+								fontSize += 1
+							}
+						}
 					}
-					Button("Increase font size", systemImage: "textformat.size.larger") {
-						fontSize += 1
-					}
-					Button("Copy note", systemImage: "doc.on.doc") {
-						NSPasteboard.general.clearContents()
-						NSPasteboard.general.setString(notes, forType: .string)
-					}
+					
 					Picker("Note Font", selection: $fontDesign) {
 						ForEach(FontDesign.allCases) { font in
 							Text(font.description)
 								.fontDesign(font.design)
 						}
 					}
-					Button("Quit", systemImage: "power") {
-						NSApp.terminate(nil)
+					
+					Spacer()
+					
+					HStack {
+						Button {
+							NSPasteboard.general.clearContents()
+							NSPasteboard.general.setString(notes, forType: .string)
+						} label: {
+							Image(systemName: "doc.on.doc")
+						}
+						
+						Spacer()
+						
+						Button {
+							NSApp.terminate(nil)
+						} label: {
+							Image(systemName: "power")
+						}
 					}
 				}
-				.frame(width: 300, height: 200, alignment: .topLeading)
+				.frame(width: 300, height: 250, alignment: .topLeading)
 				.padding()
 			}
 		}
