@@ -12,6 +12,7 @@ struct TopNotesApp: App {
     var body: some Scene {
 		MenuBarExtra("TopNotes", systemImage: "square.and.pencil") {
             ContentView()
+				.environment(AppState())
 				.frame(width: 400, height: 350)
         }
 		.menuBarExtraStyle(.window)

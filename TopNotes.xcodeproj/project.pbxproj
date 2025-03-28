@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		BB87181F2D96801600918708 /* Customization+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB87181E2D96801600918708 /* Customization+Extensions.swift */; };
+		BB87182C2D970AA000918708 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = BB87182B2D970AA000918708 /* KeychainAccess */; };
 		BBCA9E6B2D946F6C00B3BE9B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCA9E642D946F6C00B3BE9B /* Preview Assets.xcassets */; };
 		BBCA9E6C2D946F6C00B3BE9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCA9E662D946F6C00B3BE9B /* Assets.xcassets */; };
 		BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E672D946F6C00B3BE9B /* ContentView.swift */; };
 		BBCA9E6E2D946F6C00B3BE9B /* TopNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E692D946F6C00B3BE9B /* TopNotesApp.swift */; };
-		BBCA9EBC2D95C8C800B3BE9B /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA9EBB2D95C8C800B3BE9B /* KeychainAccess */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,17 +30,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBCA9EBC2D95C8C800B3BE9B /* KeychainAccess in Frameworks */,
+				BB87182C2D970AA000918708 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB87182A2D970AA000918708 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BBCA9E492D946F6100B3BE9B = {
 			isa = PBXGroup;
 			children = (
 				BBCA9E6A2D946F6C00B3BE9B /* TopNotes */,
+				BB87182A2D970AA000918708 /* Frameworks */,
 				BBCA9E532D946F6100B3BE9B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +99,7 @@
 			);
 			name = TopNotes;
 			packageProductDependencies = (
-				BBCA9EBB2D95C8C800B3BE9B /* KeychainAccess */,
+				BB87182B2D970AA000918708 /* KeychainAccess */,
 			);
 			productName = TopNotes;
 			productReference = BBCA9E522D946F6100B3BE9B /* TopNotes.app */;
@@ -371,7 +379,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BBCA9EBB2D95C8C800B3BE9B /* KeychainAccess */ = {
+		BB87182B2D970AA000918708 /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BBCA9EBA2D95C8C800B3BE9B /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;

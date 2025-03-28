@@ -7,8 +7,16 @@
 
 import SwiftUI
 import KeychainAccess
+import ServiceManagement
+
+@Observable
+class AppState {
+	var launchAtLogin = false
+}
 
 struct ContentView: View {
+	@Environment(AppState.self) var appState
+	@Environment(\.appearsActive) var appearsActive
 	@AppStorage("fontSize") var fontSize = 13.0
 	@AppStorage("fontDesign") var fontDesign: FontDesign = .system
 	@AppStorage("bgColor") var theme: ThemeColors = .topNotes
@@ -18,6 +26,8 @@ struct ContentView: View {
 	let keychain = Keychain(accessGroup: "com.dextercode.TopNotes")
 	
 	var body: some View {
+		@Bindable var appState = appState
+
 		VStack {
 			TextEditor(text: $notes)
 				.lineSpacing(5)
@@ -46,21 +56,48 @@ struct ContentView: View {
 							}
 						}
 						
+						Toggle("Launch at login", isOn: $appState.launchAtLogin)
+						
 						Spacer()
-						QuitButton
+						HStack {
+							Spacer()
+							QuitButton
+						}
 					}
-					.frame(width: 300, height: 180, alignment: .topLeading)
+					.frame(width: 300, height: 230, alignment: .topLeading)
 					.padding()
 				}
 		}
 		.padding()
 		.background(theme.bgColor)
 		.tint(theme.fontColor)
-		.onAppear(perform: loadNotes)
+		.onAppear {
+			if SMAppService.mainApp.status == .enabled {
+				appState.launchAtLogin = true
+			} else {
+				appState.launchAtLogin = false
+			}
+			
+			loadNotes()
+		}
 		.onChange(of: notes) {
 			saveNotes(newValue: notes)
 		}
-		
+		.onChange(of: appState.launchAtLogin) { _, newValue in
+			if newValue == true {
+				try? SMAppService.mainApp.register()
+			} else {
+				try? SMAppService.mainApp.unregister()
+			}
+		}
+		.onChange(of: appearsActive) { _, newValue in
+			guard newValue else { return }
+			if SMAppService.mainApp.status == .enabled {
+				appState.launchAtLogin = true
+			} else {
+				appState.launchAtLogin = false
+			}
+		}
 	}
 	
 	func loadNotes() {
@@ -79,6 +116,7 @@ struct ContentView: View {
 
 #Preview {
 	ContentView()
+		.environment(AppState())
 }
 
 
@@ -123,14 +161,11 @@ private extension ContentView {
 	}
 	
 	var QuitButton: some View {
-		HStack {
-			Spacer()
-			Button {
-				NSApp.terminate(nil)
-			} label: {
-				Image(systemName: "power")
-			}
-			.buttonStyle(.accessoryBar)
+		Button {
+			NSApp.terminate(nil)
+		} label: {
+			Image(systemName: "power")
 		}
+		.buttonStyle(.accessoryBar)
 	}
 }
