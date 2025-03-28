@@ -9,42 +9,63 @@ import SwiftUI
 import KeychainAccess
 
 struct ContentView: View {
-	@AppStorage("fontSize") var fontSize = 14.0
+	@AppStorage("fontSize") var fontSize = 13.0
+	@AppStorage("fontDesign") var fontDesign: FontDesign = .system
+	@AppStorage("customAccent") var fontColor: fontColor = .Blue
 	@State private var notes: String = ""
 	@State private var savingTask: Task<Void, Error>?
+	@State private var showPopover: Bool = false
 	let keychain = Keychain(accessGroup: "com.dextercode.TopNotes")
-	
 	
 	var body: some View {
 		VStack {
 			TextEditor(text: $notes)
+				.foregroundStyle(fontColor.color)
 				.font(.system(size: fontSize))
-				.frame(width: 400, height: 400)
-			
-			HStack {
-				ControlGroup {
+				.fontDesign(fontDesign.design)
+			VStack {
+				HStack {
+					Spacer()
+					Button {
+						showPopover.toggle()
+					} label: {
+						Image(systemName: "ellipsis")
+					}
+					.buttonStyle(.accessoryBar)
+				}
+			}
+			.popover(isPresented: $showPopover, attachmentAnchor: .point(.trailing), arrowEdge: .bottom) {
+				VStack(alignment: .leading, spacing: 15) {
 					Button("Decrease font size", systemImage: "textformat.size.smaller") {
 						fontSize -= 1
 					}
-					Button("Decrease font size", systemImage: "textformat.size.larger") {
+					Button("Increase font size", systemImage: "textformat.size.larger") {
 						fontSize += 1
 					}
-				}
-				
-				ControlGroup {
 					Button("Copy note", systemImage: "doc.on.doc") {
 						NSPasteboard.general.clearContents()
 						NSPasteboard.general.setString(notes, forType: .string)
+					}
+					Picker("Note Font", selection: $fontDesign) {
+						ForEach(FontDesign.allCases) { font in
+							Text(font.description)
+								.fontDesign(font.design)
+						}
 					}
 					Button("Quit", systemImage: "power") {
 						NSApp.terminate(nil)
 					}
 				}
+				.frame(width: 300, height: 200, alignment: .topLeading)
+				.padding()
 			}
 		}
 		.padding()
+		.background(Color.topNotesBlue)
 		.onAppear(perform: loadNotes)
-		.onChange(of: notes, perform: saveNotes)
+		.onChange(of: notes) {
+			saveNotes(newValue: notes)
+		}
 	}
 	
 	func loadNotes() {

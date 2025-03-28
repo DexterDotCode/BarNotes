@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB87181F2D96801600918708 /* Customization+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB87181E2D96801600918708 /* Customization+Extensions.swift */; };
 		BBCA9E6B2D946F6C00B3BE9B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCA9E642D946F6C00B3BE9B /* Preview Assets.xcassets */; };
 		BBCA9E6C2D946F6C00B3BE9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCA9E662D946F6C00B3BE9B /* Assets.xcassets */; };
 		BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E672D946F6C00B3BE9B /* ContentView.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB87181E2D96801600918708 /* Customization+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Customization+Extensions.swift"; sourceTree = "<group>"; };
 		BBCA9E522D946F6100B3BE9B /* TopNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCA9E642D946F6C00B3BE9B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BBCA9E662D946F6C00B3BE9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				BBCA9E672D946F6C00B3BE9B /* ContentView.swift */,
 				BBCA9E682D946F6C00B3BE9B /* TopNotes.entitlements */,
 				BBCA9E692D946F6C00B3BE9B /* TopNotesApp.swift */,
+				BB87181E2D96801600918708 /* Customization+Extensions.swift */,
 			);
 			path = TopNotes;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB87181F2D96801600918708 /* Customization+Extensions.swift in Sources */,
 				BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */,
 				BBCA9E6E2D946F6C00B3BE9B /* TopNotesApp.swift in Sources */,
 			);
