@@ -27,16 +27,14 @@ struct ContentView: View {
 	
 	var body: some View {
 		@Bindable var appState = appState
-
+		
 		VStack {
 			TextEditor(text: $notes)
 				.lineSpacing(5)
 				.foregroundStyle(theme.fontColor)
 				.font(.system(size: fontSize))
 				.fontDesign(fontDesign.design)
-			
 			BottomToolbar
-			
 				.popover(
 					isPresented: $showPopover,
 					attachmentAnchor: .point(.trailing),
@@ -44,7 +42,6 @@ struct ContentView: View {
 				) {
 					VStack(alignment: .leading, spacing: 20) {
 						FontControlGroup
-						
 						Picker("Note Font              ", selection: $fontDesign) {
 							ForEach(FontDesign.allCases) { font in
 								Text(font.description)
@@ -55,9 +52,7 @@ struct ContentView: View {
 								Text(bgColor.description)
 							}
 						}
-						
 						Toggle("Launch at login", isOn: $appState.launchAtLogin)
-						
 						Spacer()
 						HStack {
 							Spacer()
@@ -77,7 +72,6 @@ struct ContentView: View {
 			} else {
 				appState.launchAtLogin = false
 			}
-			
 			loadNotes()
 		}
 		.onChange(of: notes) {
