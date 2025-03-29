@@ -42,16 +42,8 @@ struct ContentView: View {
 				) {
 					VStack(alignment: .leading, spacing: 20) {
 						FontControlGroup
-						Picker("Note Font              ", selection: $fontDesign) {
-							ForEach(FontDesign.allCases) { font in
-								Text(font.description)
-							}
-						}
-						Picker("Background Color", selection: $theme) {
-							ForEach(ThemeColors.allCases) { bgColor in
-								Text(bgColor.description)
-							}
-						}
+						NoteFontPicker
+						BackgroundColorPicker
 						Toggle("Launch at login", isOn: $appState.launchAtLogin)
 						Spacer()
 						HStack {
@@ -66,14 +58,6 @@ struct ContentView: View {
 		.padding()
 		.background(theme.bgColor)
 		.tint(theme.fontColor)
-		.onAppear {
-			if SMAppService.mainApp.status == .enabled {
-				appState.launchAtLogin = true
-			} else {
-				appState.launchAtLogin = false
-			}
-			loadNotes()
-		}
 		.onChange(of: notes) {
 			saveNotes(newValue: notes)
 		}
@@ -91,6 +75,14 @@ struct ContentView: View {
 			} else {
 				appState.launchAtLogin = false
 			}
+		}
+		.onAppear {
+			if SMAppService.mainApp.status == .enabled {
+				appState.launchAtLogin = true
+			} else {
+				appState.launchAtLogin = false
+			}
+			loadNotes()
 		}
 	}
 	
@@ -161,5 +153,21 @@ private extension ContentView {
 			Image(systemName: "power")
 		}
 		.buttonStyle(.accessoryBar)
+	}
+	
+	var NoteFontPicker: some View {
+		Picker("Note Font              ", selection: $fontDesign) {
+			ForEach(FontDesign.allCases) { font in
+				Text(font.description)
+			}
+		}
+	}
+	
+	var BackgroundColorPicker: some View {
+		Picker("Background Color", selection: $theme) {
+			ForEach(ThemeColors.allCases) { bgColor in
+				Text(bgColor.description)
+			}
+		}
 	}
 }
