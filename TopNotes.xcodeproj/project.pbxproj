@@ -13,6 +13,7 @@
 		BBCA9E6C2D946F6C00B3BE9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCA9E662D946F6C00B3BE9B /* Assets.xcassets */; };
 		BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E672D946F6C00B3BE9B /* ContentView.swift */; };
 		BBCA9E6E2D946F6C00B3BE9B /* TopNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E692D946F6C00B3BE9B /* TopNotesApp.swift */; };
+		BBF17E612D9ECDC500679ECC /* BottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF17E602D9ECDC500679ECC /* BottomToolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		BBCA9E672D946F6C00B3BE9B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BBCA9E682D946F6C00B3BE9B /* TopNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TopNotes.entitlements; sourceTree = "<group>"; };
 		BBCA9E692D946F6C00B3BE9B /* TopNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNotesApp.swift; sourceTree = "<group>"; };
+		BBF17E602D9ECDC500679ECC /* BottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomToolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				BBCA9E692D946F6C00B3BE9B /* TopNotesApp.swift */,
 				BBCA9E672D946F6C00B3BE9B /* ContentView.swift */,
+				BBF17E602D9ECDC500679ECC /* BottomToolbar.swift */,
 				BB87181E2D96801600918708 /* Customization+Extensions.swift */,
 				BBCA9E662D946F6C00B3BE9B /* Assets.xcassets */,
 				BBCA9E682D946F6C00B3BE9B /* TopNotes.entitlements */,
@@ -153,6 +156,7 @@
 			files = (
 				BB87181F2D96801600918708 /* Customization+Extensions.swift in Sources */,
 				BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */,
+				BBF17E612D9ECDC500679ECC /* BottomToolbar.swift in Sources */,
 				BBCA9E6E2D946F6C00B3BE9B /* TopNotesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

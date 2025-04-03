@@ -34,7 +34,7 @@ struct ContentView: View {
 				.foregroundStyle(theme.fontColor)
 				.font(.system(size: fontSize))
 				.fontDesign(fontDesign.design)
-			BottomToolbar
+			BottomToolbar(notes: notes, showPopover: $showPopover)
 				.popover(
 					isPresented: $showPopover,
 					attachmentAnchor: .point(.trailing),
@@ -107,29 +107,6 @@ struct ContentView: View {
 
 
 private extension ContentView {
-	var BottomToolbar: some View {
-		VStack {
-			HStack {
-				Button {
-					NSPasteboard.general.clearContents()
-					NSPasteboard.general.setString(notes, forType: .string)
-				} label: {
-					Image(systemName: "doc.on.doc")
-				}
-				.buttonStyle(.accessoryBar)
-				
-				Spacer()
-				
-				Button {
-					showPopover.toggle()
-				} label: {
-					Image(systemName: "ellipsis")
-				}
-				.buttonStyle(.accessoryBar)
-			}
-		}
-	}
-	
 	var FontControlGroup: some View {
 		VStack(alignment: .leading, spacing: 7) {
 			Text("Font Size")
