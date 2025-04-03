@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct TopNotesApp: App {
     var body: some Scene {
-		MenuBarExtra("TopNotes", systemImage: "square.and.pencil") {
+		MenuBarExtra("TopNotes", systemImage: "inset.filled.circle") {
             ContentView()
 				.environment(AppState())
 				.frame(width: 400, height: 350)

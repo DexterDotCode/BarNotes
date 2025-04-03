@@ -20,6 +20,7 @@ struct BottomToolbar: View {
 				} label: {
 					Image(systemName: "doc.on.doc")
 				}
+				.accessibilityLabel("Copy note")
 				.buttonStyle(.accessoryBar)
 				
 				Spacer()
@@ -29,6 +30,7 @@ struct BottomToolbar: View {
 				} label: {
 					Image(systemName: "ellipsis")
 				}
+				.accessibilityLabel("Show options")
 				.buttonStyle(.accessoryBar)
 			}
 		}

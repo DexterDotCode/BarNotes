@@ -14,6 +14,9 @@
 		BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E672D946F6C00B3BE9B /* ContentView.swift */; };
 		BBCA9E6E2D946F6C00B3BE9B /* TopNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E692D946F6C00B3BE9B /* TopNotesApp.swift */; };
 		BBF17E612D9ECDC500679ECC /* BottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF17E602D9ECDC500679ECC /* BottomToolbar.swift */; };
+		BBF17E632D9ECFB200679ECC /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF17E622D9ECFB200679ECC /* AppState.swift */; };
+		BBF17E6B2D9EE0BC00679ECC /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF17E6A2D9EE0BC00679ECC /* PopoverView.swift */; };
+		BBF17E6D2D9EE10100679ECC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF17E6C2D9EE10100679ECC /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		BBCA9E682D946F6C00B3BE9B /* TopNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TopNotes.entitlements; sourceTree = "<group>"; };
 		BBCA9E692D946F6C00B3BE9B /* TopNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNotesApp.swift; sourceTree = "<group>"; };
 		BBF17E602D9ECDC500679ECC /* BottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomToolbar.swift; sourceTree = "<group>"; };
+		BBF17E622D9ECFB200679ECC /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		BBF17E6A2D9EE0BC00679ECC /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		BBF17E6C2D9EE10100679ECC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +74,10 @@
 			children = (
 				BBCA9E692D946F6C00B3BE9B /* TopNotesApp.swift */,
 				BBCA9E672D946F6C00B3BE9B /* ContentView.swift */,
+				BBF17E6C2D9EE10100679ECC /* ViewModel.swift */,
 				BBF17E602D9ECDC500679ECC /* BottomToolbar.swift */,
+				BBF17E6A2D9EE0BC00679ECC /* PopoverView.swift */,
+				BBF17E622D9ECFB200679ECC /* AppState.swift */,
 				BB87181E2D96801600918708 /* Customization+Extensions.swift */,
 				BBCA9E662D946F6C00B3BE9B /* Assets.xcassets */,
 				BBCA9E682D946F6C00B3BE9B /* TopNotes.entitlements */,
@@ -154,9 +163,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF17E6D2D9EE10100679ECC /* ViewModel.swift in Sources */,
 				BB87181F2D96801600918708 /* Customization+Extensions.swift in Sources */,
+				BBF17E632D9ECFB200679ECC /* AppState.swift in Sources */,
 				BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */,
 				BBF17E612D9ECDC500679ECC /* BottomToolbar.swift in Sources */,
+				BBF17E6B2D9EE0BC00679ECC /* PopoverView.swift in Sources */,
 				BBCA9E6E2D946F6C00B3BE9B /* TopNotesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

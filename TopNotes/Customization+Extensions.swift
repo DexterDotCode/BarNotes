@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 enum FontDesign: String, CaseIterable, Identifiable {
 	case system, monospace, rounded, serif
 	
