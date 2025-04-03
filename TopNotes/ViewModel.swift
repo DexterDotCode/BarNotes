@@ -13,7 +13,7 @@ extension ContentView {
 	@Observable @MainActor
 	class ViewModel {
 		var notes: String = ""
-		var savingTask: Task<Void, Error>?
+		var savingTask: Task<Void, any Error>?
 		var showPopover: Bool = false
 		
 		let keychain = Keychain(accessGroup: "com.dextercode.TopNotes")
