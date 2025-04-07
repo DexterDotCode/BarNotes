@@ -9,14 +9,25 @@ import SwiftUI
 import ServiceManagement
 
 
+/// The main view for the app, showing the user's note, copy button and options button.
 struct ContentView: View {
+	
+	/// Class that tracks the login state.
 	@Environment(AppState.self) var appState
+	
+	/// Environment which prefers an active appearance over an inactive appearance.
 	@Environment(\.appearsActive) var appearsActive
 	
+	/// The font size to use, defaulting to the macOS standard size.
 	@AppStorage("fontSize") var fontSize = 13.0
+	
+	/// The font design to use, defaulting to the system font design.
 	@AppStorage("fontDesign") var fontDesign: FontDesign = .system
+	
+	/// The theme  to use, defaulting to the default TopNotes theme.
 	@AppStorage("bgColor") var theme: ThemeColors = .topNotes
 	
+	/// Instance of viewModel for ContentView.
 	@State private var viewModel = ViewModel()
 	
 	var body: some View {
@@ -41,13 +52,12 @@ struct ContentView: View {
 		.background(theme.bgColor)
 		.tint(theme.fontColor)
 		
-		// saveNotes function will get called when the value of notes changes.
-		.onChange(of: viewModel.notes) {
-			viewModel.saveNotes(newValue: viewModel.notes)
+		/// saveNotes function will get called when the value of notes changes.
+		.onChange(of: viewModel.notes) { _, newValue in
+			viewModel.saveNotes(newValue: newValue)
 		}
 		
-		// appState.launchAtLogin is changed by toggle.
-		// Then the app reacts accordingly
+		/// appState.launchAtLogin is changed by toggle. Then the app reacts accordingly
 		.onChange(of: appState.launchAtLogin) { _, newValue in
 			if newValue == true {
 				try? SMAppService.mainApp.register()
@@ -56,13 +66,10 @@ struct ContentView: View {
 			}
 		}
 		
-		// If user remove the app from Login Items in Settings directly,
-		// and the app window is also opened, then
-		// this onChanged method updates the UI state
-		// when the app window regains focus by
-		// using the appearsActive environment value.
-		// This ensures that when the user refocuses on the app window,
-		// the correct system settings status is reflected.
+		/// If user remove the app from Login Items in Settings directly,
+		/// and the app window is also opened,
+		/// Then this onChanged method updates the UI state
+		/// when the app window regains focus by using the appearsActive environment value.
 		.onChange(of: appearsActive) { _, newValue in
 			guard newValue else { return }
 			if SMAppService.mainApp.status == .enabled {
@@ -72,14 +79,16 @@ struct ContentView: View {
 			}
 		}
 		
-		// Checking the current login status of the app to ensure the UI is up to date.
+		/// Checking the current login status of the app to ensure the UI is up to date.
 		.onAppear {
 			if SMAppService.mainApp.status == .enabled {
 				appState.launchAtLogin = true
 			} else {
 				appState.launchAtLogin = false
 			}
-			viewModel.loadNotes()
 		}
+		
+		/// Loading notes from keychain on appearing.
+		.onAppear(perform: viewModel.loadNotes)
 	}
 }

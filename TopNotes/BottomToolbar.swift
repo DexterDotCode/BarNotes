@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// This view contains two buttons at the bottom of the window, copy button and options popover button.
 struct BottomToolbar: View {
 	var notes: String
 	@Binding var showPopover: Bool

@@ -7,9 +7,10 @@
 
 import Foundation
 
+/// Class that tracks the app state for launch at login feature.
 @Observable
 class AppState {
-	// By default the app shouldn't be allowed to launch at login
-	// without user's permission ~ Apple's Doc
+	
+	/// By default the app shouldn't be allowed to launch at login, without user's permission ~ Apple.
 	var launchAtLogin = false
 }

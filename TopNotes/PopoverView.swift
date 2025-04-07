@@ -7,10 +7,19 @@
 
 import SwiftUI
 
+/// The popover view which holds the customization features of TopNotes.
 struct PopoverView: View {
+	
+	/// Class that tracks the login state.
 	@Environment(AppState.self) var appState
+	
+	/// Binding for changing font size.
 	@Binding var fontSize: Double
+	
+	/// Binding for changing app theme.
 	@Binding var theme: ThemeColors
+	
+	/// Binding for changing font design.
 	@Binding var fontDesign: FontDesign
 	
     var body: some View {
@@ -40,7 +49,7 @@ struct PopoverView: View {
 			
 			Picker("Background Color", selection: $theme) {
 				ForEach(ThemeColors.allCases) { bgColor in
-					Text(bgColor.description)
+					Text(bgColor.bgColorLabel)
 				}
 			}
 			

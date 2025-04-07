@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// The main struct of our app, responsible for setting up our user interface as a macOS menu bar app showing as a window.
 @main
 struct TopNotesApp: App {
     var body: some Scene {

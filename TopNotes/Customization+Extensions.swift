@@ -5,6 +5,7 @@
 //  Created by Tanish Mittal on 28/03/25.
 //
 
+/// Enums for Font Design and Theme
 import SwiftUI
 
 enum FontDesign: String, CaseIterable, Identifiable {
@@ -33,11 +34,11 @@ enum FontDesign: String, CaseIterable, Identifiable {
 
 
 enum ThemeColors: String, CaseIterable, Identifiable {
-	case topNotes, blue, yellow, green, purple, indigo, pink, clear
+	case topNotes, blue, yellow, green, purple, indigo, pink, translucent
 	
 	var id: Self { self }
 	
-	var description: String {
+	var bgColorLabel: String {
 		switch self {
 			case .topNotes: "Default"
 			case .blue: "Blue"
@@ -46,7 +47,7 @@ enum ThemeColors: String, CaseIterable, Identifiable {
 			case .purple: "Purple"
 			case .indigo: "Indigo"
 			case .pink: "Pink"
-			case .clear: "Clear"
+			case .translucent: "Translucent"
 		}
 	}
 	
@@ -59,7 +60,7 @@ enum ThemeColors: String, CaseIterable, Identifiable {
 			case .purple: .bgPurple
 			case .indigo: .bgIndigo
 			case .pink: .bgPink
-			case .clear: .clear
+			case .translucent: .clear
 		}
 	}
 	
@@ -72,7 +73,7 @@ enum ThemeColors: String, CaseIterable, Identifiable {
 			case .purple: .fontPurple
 			case .indigo: .fontIndigo
 			case .pink: .fontPink
-			case .clear: .fontDefault
+			case .translucent: .fontDefault
 		}
 	}
 }
