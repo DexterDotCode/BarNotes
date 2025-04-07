@@ -25,7 +25,7 @@ extension ContentView {
 		var showPopover: Bool = false
 		
 		/// An instance of Kishikawa Katsumi's Keychain class, to handle securely reading and writing user's notes.
-		let keychain = Keychain(service: "com.dextercode.TopNotes")
+		let keychain = Keychain(service: "com.dextercode.BarNotes")
 		
 		
 		/**
