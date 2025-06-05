@@ -29,11 +29,9 @@ A special version for users that cannot access the App Store. It won't receive a
 ## Features
 BarNotes can be used for pretty much anything.
 
-- Making tasks lists
-- For writing any ideas quickly without leaving you Mac.
-- Using it as a scratchpad.
-- Writing something you don’t want to forget.
-- For security the notes are encrypted with iCloud keychain, so you can also write your passwords temporarily.
+- Jot down your tasks
+- Using it as a scratchpad
+- For security the notes are encrypted with iCloud keychain, so you can also write your passwords **temporarily**
 
 ![](Stuff/TopNotes-Main-photo.png)
 
@@ -63,4 +61,4 @@ BarNotes can be used for pretty much anything.
 - BarNotes does not display any advertisements, or include any trackers or analytics.
 
 ## Other apps
-- [Compose Notes](https://apps.apple.com/in/app/compose-notes/id6743021076) - Minimal note taking app for iPhone and iPad
+- [Compose Notes](https://apps.apple.com/in/app/compose-notes/id6743021076) - Beautiful note taking app for iPhone and iPad
