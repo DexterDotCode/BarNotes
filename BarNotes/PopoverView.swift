@@ -49,8 +49,15 @@ struct PopoverView: View {
 			Toggle("Launch at login", isOn: $appState.launchAtLogin)
 			
 			Spacer()
+			
 			HStack {
+				Link(destination: URL(string: "https://github.com/dexterdotcode/barnotes")!) {
+					Text("Github")
+						.fontWeight(.medium)
+				}
+				
 				Spacer()
+				
 				Button {
 					NSApp.terminate(nil)
 				} label: {
