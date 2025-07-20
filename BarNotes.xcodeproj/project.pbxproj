@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB5E3A9E2E2C2AB900F53E8B /* Logger+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5E3A9D2E2C2AB900F53E8B /* Logger+Ext.swift */; };
 		BB87181F2D96801600918708 /* Customization+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB87181E2D96801600918708 /* Customization+Extensions.swift */; };
 		BB87182C2D970AA000918708 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = BB87182B2D970AA000918708 /* KeychainAccess */; };
 		BBCA9E6B2D946F6C00B3BE9B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCA9E642D946F6C00B3BE9B /* Preview Assets.xcassets */; };
 		BBCA9E6C2D946F6C00B3BE9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCA9E662D946F6C00B3BE9B /* Assets.xcassets */; };
 		BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E672D946F6C00B3BE9B /* ContentView.swift */; };
 		BBCA9E6E2D946F6C00B3BE9B /* BarNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E692D946F6C00B3BE9B /* BarNotes.swift */; };
-		BBF17E612D9ECDC500679ECC /* BottomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF17E602D9ECDC500679ECC /* BottomToolbar.swift */; };
 		BBF17E632D9ECFB200679ECC /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF17E622D9ECFB200679ECC /* AppState.swift */; };
 		BBF17E6B2D9EE0BC00679ECC /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF17E6A2D9EE0BC00679ECC /* PopoverView.swift */; };
-		BBF17E6D2D9EE10100679ECC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF17E6C2D9EE10100679ECC /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB5E3A9D2E2C2AB900F53E8B /* Logger+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Ext.swift"; sourceTree = "<group>"; };
 		BB87181E2D96801600918708 /* Customization+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Customization+Extensions.swift"; sourceTree = "<group>"; };
 		BBCA9E522D946F6100B3BE9B /* BarNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCA9E642D946F6C00B3BE9B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -27,10 +27,8 @@
 		BBCA9E672D946F6C00B3BE9B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BBCA9E682D946F6C00B3BE9B /* BarNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BarNotes.entitlements; sourceTree = "<group>"; };
 		BBCA9E692D946F6C00B3BE9B /* BarNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarNotes.swift; sourceTree = "<group>"; };
-		BBF17E602D9ECDC500679ECC /* BottomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomToolbar.swift; sourceTree = "<group>"; };
 		BBF17E622D9ECFB200679ECC /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		BBF17E6A2D9EE0BC00679ECC /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
-		BBF17E6C2D9EE10100679ECC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,14 +72,13 @@
 			children = (
 				BBCA9E692D946F6C00B3BE9B /* BarNotes.swift */,
 				BBCA9E672D946F6C00B3BE9B /* ContentView.swift */,
-				BBF17E6C2D9EE10100679ECC /* ViewModel.swift */,
-				BBF17E602D9ECDC500679ECC /* BottomToolbar.swift */,
 				BBF17E6A2D9EE0BC00679ECC /* PopoverView.swift */,
 				BBF17E622D9ECFB200679ECC /* AppState.swift */,
 				BB87181E2D96801600918708 /* Customization+Extensions.swift */,
 				BBCA9E662D946F6C00B3BE9B /* Assets.xcassets */,
 				BBCA9E682D946F6C00B3BE9B /* BarNotes.entitlements */,
 				BBCA9E652D946F6C00B3BE9B /* Preview Content */,
+				BB5E3A9D2E2C2AB900F53E8B /* Logger+Ext.swift */,
 			);
 			path = BarNotes;
 			sourceTree = "<group>";
@@ -117,7 +114,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1630;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					BBCA9E512D946F6100B3BE9B = {
 						CreatedOnToolsVersion = 16.2;
@@ -163,13 +160,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBF17E6D2D9EE10100679ECC /* ViewModel.swift in Sources */,
 				BB87181F2D96801600918708 /* Customization+Extensions.swift in Sources */,
 				BBF17E632D9ECFB200679ECC /* AppState.swift in Sources */,
 				BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */,
-				BBF17E612D9ECDC500679ECC /* BottomToolbar.swift in Sources */,
 				BBF17E6B2D9EE0BC00679ECC /* PopoverView.swift in Sources */,
 				BBCA9E6E2D946F6C00B3BE9B /* BarNotes.swift in Sources */,
+				BB5E3A9E2E2C2AB900F53E8B /* Logger+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +232,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = YES;
@@ -296,6 +293,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = YES;
 				SWIFT_VERSION = 6.0;
@@ -314,8 +312,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BarNotes/Preview Content\"";
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = BarNotes;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
@@ -347,8 +347,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BarNotes/Preview Content\"";
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = BarNotes;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";

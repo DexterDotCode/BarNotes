@@ -5,90 +5,130 @@
 //  Created by Tanish Mittal on 26/03/25.
 //
 
-import SwiftUI
+import KeychainAccess
+import OSLog
 import ServiceManagement
+import SwiftUI
 
 
-/// The main view for the app, showing the user's note, copy button and options button.
 struct ContentView: View {
-	
-	/// Class that tracks the login state.
 	@Environment(AppState.self) var appState
-	
-	/// Environment which prefers an active appearance over an inactive appearance.
 	@Environment(\.appearsActive) var appearsActive
 	
-	/// The font size to use, defaulting to the macOS standard size.
 	@AppStorage("fontSize") var fontSize = 13.0
-	
-	/// The font design to use, defaulting to the system font design.
 	@AppStorage("fontDesign") var fontDesign: FontDesign = .system
+	@AppStorage("bgColor") var theme: ThemeColors = .barnotes
 	
-	/// The theme  to use, defaulting to the default TopNotes theme.
-	@AppStorage("bgColor") var theme: ThemeColors = .topNotes
+	@State private var notes = ""
+	@State private var savingTask: Task<Void, any Error>? = nil
+	@State private var showPopover = false
 	
-	/// Instance of viewModel for ContentView.
-	@State private var viewModel = ViewModel()
+	let keychain = Keychain(service: "com.dextercode.BarNotes")
 	
 	var body: some View {
 		VStack {
-			TextEditor(text: $viewModel.notes)
+			TextEditor(text: $notes)
 				.lineSpacing(5)
 				.foregroundStyle(theme.fontColor)
 				.font(.system(size: fontSize))
 				.fontDesign(fontDesign.design)
 			
-			BottomToolbar(notes: viewModel.notes, showPopover: $viewModel.showPopover)
-			
-				.popover(
-					isPresented: $viewModel.showPopover,
-					attachmentAnchor: .point(.trailing),
-					arrowEdge: .bottom
-				) {
+			HStack {
+				Button {
+					NSPasteboard.general.clearContents()
+					NSPasteboard.general.setString(notes, forType: .string)
+					Logger.dataOperations.info("Text copied")
+				} label: {
+					Image(systemName: "doc.on.doc")
+				}
+				.accessibilityLabel("Copy note")
+				.buttonStyle(.accessoryBarAction)
+				
+				Spacer()
+				
+				Button {
+					showPopover.toggle()
+				} label: {
+					Image(systemName: "ellipsis")
+				}
+				.accessibilityLabel("Show options")
+			}
+				.popover(isPresented: $showPopover,
+						 attachmentAnchor: .point(.trailing),
+						 arrowEdge: .bottom) {
 					PopoverView(fontSize: $fontSize, theme: $theme, fontDesign: $fontDesign)
 				}
 		}
 		.padding()
 		.background(theme.bgColor)
 		.tint(theme.fontColor)
-		
-		/// saveNotes function will get called when the value of notes changes.
-		.onChange(of: viewModel.notes) { _, newValue in
-			viewModel.saveNotes(newValue: newValue)
+		.onChange(of: notes) { _, newValue in
+			saveNotes(newValue: newValue)
 		}
-		
-		/// appState.launchAtLogin is changed by toggle. Then the app reacts accordingly
-		.onChange(of: appState.launchAtLogin) { _, newValue in
-			if newValue == true {
-				try? SMAppService.mainApp.register()
-			} else {
-				try? SMAppService.mainApp.unregister()
-			}
+		.onChange(of: appState.launchAtLogin) { _, state in
+			launchAtLoginByToggle(state)
 		}
-		
-		/// If user remove the app from Login Items in Settings directly,
-		/// and the app window is also opened,
-		/// Then this onChanged method updates the UI state
-		/// when the app window regains focus by using the appearsActive environment value.
-		.onChange(of: appearsActive) { _, newValue in
-			guard newValue else { return }
-			if SMAppService.mainApp.status == .enabled {
-				appState.launchAtLogin = true
-			} else {
-				appState.launchAtLogin = false
-			}
+		.onChange(of: appearsActive) { _, state in
+			launchAtLoginFromSettings(state)
 		}
-		
-		/// Checking the current login status of the app to ensure the UI is up to date.
-		.onAppear {
-			if SMAppService.mainApp.status == .enabled {
-				appState.launchAtLogin = true
-			} else {
-				appState.launchAtLogin = false
-			}
+		.onAppear(perform: checkLaunchAtLoginStatus)
+		.onAppear(perform: loadNotes)
+	}
+	
+	private func launchAtLoginByToggle(_ state: Bool) {
+		if state == true {
+			try? SMAppService.mainApp.register()
+			Logger.dataOperations.info("Launch at login in set to true")
+		} else {
+			try? SMAppService.mainApp.unregister()
+			Logger.dataOperations.info("Launch at login in set to false")
 		}
+	}
+	
+	/// If user remove the app from Login Items in Settings directly,
+	/// and the app window is also opened, which is not possible in this app
+	/// but just to be safe and ensure reliability,
+	/// the `onChanged` method updates the UI state
+	/// when the app window regains focus by using the `appearsActive` environment value.
+	private func launchAtLoginFromSettings(_ state: Bool) {
+		guard state else { return }
+		if SMAppService.mainApp.status == .enabled {
+			appState.launchAtLogin = true
+			Logger.dataOperations.info("Launch at login in set to true from the settings")
+		} else {
+			appState.launchAtLogin = false
+			Logger.dataOperations.info("Launch at login in set to false from the settings")
+		}
+	}
+	
+	/// Checking the current login status at launch
+	private func checkLaunchAtLoginStatus() {
+		if SMAppService.mainApp.status == .enabled {
+			appState.launchAtLogin = true
+			Logger.dataOperations.info("Launch at login appears to be true")
+		} else {
+			appState.launchAtLogin = false
+			Logger.dataOperations.info("Launch at login appears to be false")
+		}
+	}
+	
+	/// Load notes from the user's keychain at launch.
+	private func loadNotes() {
+		notes = keychain["notes"] ?? ""
+		Logger.dataOperations.info("Notes loaded from the keychain")
+	}
+
+	/// Saves the user's latest note using a sleeping task to avoid writing to keychain on every keypress.
+	/// Delay saving by 1 second for efficiency.
+	/// If there is currently a sleeping save task active, cancel it now to avoid multiple writes to the keychain.
+	private func saveNotes(newValue: String) {
+		savingTask?.cancel()
+		Logger.dataOperations.info("Previously running save task is cancelled")
 		
-		/// Loading notes from keychain on appearing.
-		.onAppear(perform: viewModel.loadNotes)
+		savingTask = Task {
+			try await Task.sleep(for: .seconds(1))
+			keychain["notes"] = newValue
+			Logger.dataOperations.info("Notes are saved into the keychain")
+		}
 	}
 }
