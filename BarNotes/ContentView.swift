@@ -17,7 +17,7 @@ struct ContentView: View {
 	
 	@AppStorage("fontSize") var fontSize = 13.0
 	@AppStorage("fontDesign") var fontDesign: FontDesign = .system
-	@AppStorage("bgColor") var theme: ThemeColors = .barnotes
+	@AppStorage("bgColor") var theme: ThemeColors = .blue
 	
 	@State private var notes = ""
 	@State private var savingTask: Task<Void, any Error>? = nil
@@ -42,7 +42,7 @@ struct ContentView: View {
 					Image(systemName: "doc.on.doc")
 				}
 				.accessibilityLabel("Copy note")
-				.buttonStyle(.accessoryBarAction)
+				.buttonStyle(.accessoryBar)
 				
 				Spacer()
 				
@@ -52,6 +52,7 @@ struct ContentView: View {
 					Image(systemName: "ellipsis")
 				}
 				.accessibilityLabel("Show options")
+				.buttonStyle(.accessoryBar)
 			}
 				.popover(isPresented: $showPopover,
 						 attachmentAnchor: .point(.trailing),

@@ -34,13 +34,12 @@ enum FontDesign: String, CaseIterable, Identifiable {
 
 
 enum ThemeColors: String, CaseIterable, Identifiable {
-	case barnotes, blue, yellow, green, purple, indigo, pink, translucent
+	case blue, yellow, green, purple, indigo, pink, translucent
 	
 	var id: Self { self }
 	
 	var bgColorLabel: String {
 		switch self {
-			case .barnotes: "Default"
 			case .blue: "Blue"
 			case .yellow: "Yellow"
 			case .green: "Green"
@@ -53,7 +52,6 @@ enum ThemeColors: String, CaseIterable, Identifiable {
 	
 	var bgColor: Color {
 		switch self {
-			case .barnotes: .bgDefault
 			case .blue: .bgBlue
 			case .yellow: .bgYellow
 			case .green: .bgGreen
@@ -66,7 +64,6 @@ enum ThemeColors: String, CaseIterable, Identifiable {
 	
 	var fontColor: Color {
 		switch self {
-			case .barnotes: .fontDefault
 			case .blue: .fontBlue
 			case .yellow: .fontYellow
 			case .green: .fontGreen
