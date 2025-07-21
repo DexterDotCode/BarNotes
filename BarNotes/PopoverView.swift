@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
-
+import StoreKit
 
 struct PopoverView: View {
 	@Environment(AppState.self) var appState
+	@Environment(\.requestReview) var requestReview
 
 	@Binding var fontSize: Double
 	@Binding var theme: ThemeColors
@@ -47,6 +48,10 @@ struct PopoverView: View {
 			}
 			
 			Toggle("Launch at login", isOn: $appState.launchAtLogin)
+			
+			Button("Rate BarNotes") {
+				requestReview()
+			}
 			
 			Spacer()
 			
