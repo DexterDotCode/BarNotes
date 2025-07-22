@@ -68,11 +68,10 @@ struct PopoverView: View {
 					
 					Spacer()
 					
-					Button {
+					Button("Quit") {
 						NSApp.terminate(nil)
-					} label: {
-						Image(systemName: "power")
 					}
+					.fontWeight(.medium)
 					.tint(.red)
 					.buttonStyle(.accessoryBar)
 				}

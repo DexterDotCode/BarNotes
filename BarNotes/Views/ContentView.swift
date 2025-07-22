@@ -61,7 +61,6 @@ struct ContentView: View {
 			}
 		}
 		.padding()
-		.background(theme.bgColor)
 		.tint(theme.fontColor)
 		.onChange(of: notes) { _, newValue in
 			saveNotes(newValue: newValue)
