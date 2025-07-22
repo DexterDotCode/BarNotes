@@ -28,10 +28,10 @@ struct ContentView: View {
 	var body: some View {
 		VStack {
 			TextEditor(text: $notes)
-				.lineSpacing(5)
+				.animatableFontSize(size: fontSize)
 				.foregroundStyle(theme.fontColor)
-				.font(.system(size: fontSize))
 				.fontDesign(fontDesign.design)
+				.lineSpacing(5)
 			
 			HStack {
 				Button {
@@ -54,11 +54,11 @@ struct ContentView: View {
 				.accessibilityLabel("Show options")
 				.buttonStyle(.accessoryBar)
 			}
-				.popover(isPresented: $showPopover,
-						 attachmentAnchor: .point(.trailing),
-						 arrowEdge: .bottom) {
-					PopoverView(fontSize: $fontSize, theme: $theme, fontDesign: $fontDesign)
-				}
+			.popover(isPresented: $showPopover,
+					 attachmentAnchor: .point(.trailing),
+					 arrowEdge: .bottom) {
+				PopoverView(fontSize: $fontSize, theme: $theme, fontDesign: $fontDesign)
+			}
 		}
 		.padding()
 		.background(theme.bgColor)
@@ -118,7 +118,7 @@ struct ContentView: View {
 		notes = keychain["notes"] ?? ""
 		Logger.dataOperations.info("Notes loaded from the keychain")
 	}
-
+	
 	/// Saves the user's latest note using a sleeping task to avoid writing to keychain on every keypress.
 	/// Delay saving by 1 second for efficiency.
 	/// If there is currently a sleeping save task active, cancel it now to avoid multiple writes to the keychain.

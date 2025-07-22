@@ -11,13 +11,14 @@ import StoreKit
 struct PopoverView: View {
 	@Environment(AppState.self) var appState
 	@Environment(\.requestReview) var requestReview
-
+	
 	@Binding var fontSize: Double
 	@Binding var theme: ThemeColors
 	@Binding var fontDesign: FontDesign
 	
-    var body: some View {
+	var body: some View {
 		@Bindable var appState = appState
+		
 		List {
 			VStack(alignment: .leading, spacing: 25) {
 				HStack {
@@ -26,10 +27,11 @@ struct PopoverView: View {
 					Spacer()
 					ControlGroup {
 						Button("Decrease font size", systemImage: "minus") {
-							fontSize -= 1
+							withAnimation(.spring) { fontSize -= 1 }
 						}
+						
 						Button("Increase font size", systemImage: "plus") {
-							fontSize += 1
+							withAnimation(.spring) { fontSize += 1 }
 						}
 					}
 				}
@@ -56,7 +58,7 @@ struct PopoverView: View {
 					requestReview()
 				}
 				.fontWeight(.medium)
-				.buttonStyle(.borderedProminent)
+				.buttonStyle(.bordered)
 				
 				HStack {
 					Link(destination: URL(string: "https://github.com/dexterdotcode/barnotes")!) {
@@ -78,5 +80,5 @@ struct PopoverView: View {
 		}
 		.scrollDisabled(true)
 		.frame(width: 370, height: 300, alignment: .topLeading)
-    }
+	}
 }
