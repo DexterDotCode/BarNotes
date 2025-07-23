@@ -15,6 +15,10 @@
 		BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E672D946F6C00B3BE9B /* ContentView.swift */; };
 		BBCA9E6E2D946F6C00B3BE9B /* BarNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E692D946F6C00B3BE9B /* BarNotes.swift */; };
 		BBE7D2E12E2F2A0600C87CFB /* AnimatableFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7D2E02E2F2A0600C87CFB /* AnimatableFontModifier.swift */; };
+		BBE7D2F02E30F00A00C87CFB /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7D2EF2E30F00A00C87CFB /* TipJarView.swift */; };
+		BBE7D2F22E30F9DC00C87CFB /* TipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7D2F12E30F9DC00C87CFB /* TipStore.swift */; };
+		BBE7D2F42E30FA0E00C87CFB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7D2F32E30FA0E00C87CFB /* Constants.swift */; };
+		BBE7D2F62E31006500C87CFB /* BarNotesStoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = BBE7D2F52E31006500C87CFB /* BarNotesStoreKitConfiguration.storekit */; };
 		BBF17E632D9ECFB200679ECC /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF17E622D9ECFB200679ECC /* AppState.swift */; };
 		BBF17E6B2D9EE0BC00679ECC /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF17E6A2D9EE0BC00679ECC /* PopoverView.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +33,10 @@
 		BBCA9E682D946F6C00B3BE9B /* BarNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BarNotes.entitlements; sourceTree = "<group>"; };
 		BBCA9E692D946F6C00B3BE9B /* BarNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarNotes.swift; sourceTree = "<group>"; };
 		BBE7D2E02E2F2A0600C87CFB /* AnimatableFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableFontModifier.swift; sourceTree = "<group>"; };
+		BBE7D2EF2E30F00A00C87CFB /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
+		BBE7D2F12E30F9DC00C87CFB /* TipStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipStore.swift; sourceTree = "<group>"; };
+		BBE7D2F32E30FA0E00C87CFB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BBE7D2F52E31006500C87CFB /* BarNotesStoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = BarNotesStoreKitConfiguration.storekit; sourceTree = "<group>"; };
 		BBF17E622D9ECFB200679ECC /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		BBF17E6A2D9EE0BC00679ECC /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +86,7 @@
 				BBE7D2E22E2F2A1A00C87CFB /* Ext */,
 				BBCA9E652D946F6C00B3BE9B /* Preview Content */,
 				BBCA9E662D946F6C00B3BE9B /* Assets.xcassets */,
+				BBE7D2F52E31006500C87CFB /* BarNotesStoreKitConfiguration.storekit */,
 				BBCA9E682D946F6C00B3BE9B /* BarNotes.entitlements */,
 			);
 			path = BarNotes;
@@ -97,6 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				BBCA9E672D946F6C00B3BE9B /* ContentView.swift */,
+				BBE7D2EF2E30F00A00C87CFB /* TipJarView.swift */,
+				BBE7D2F12E30F9DC00C87CFB /* TipStore.swift */,
+				BBE7D2F32E30FA0E00C87CFB /* Constants.swift */,
 				BBF17E6A2D9EE0BC00679ECC /* PopoverView.swift */,
 			);
 			path = Views;
@@ -168,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBCA9E6B2D946F6C00B3BE9B /* Preview Assets.xcassets in Resources */,
+				BBE7D2F62E31006500C87CFB /* BarNotesStoreKitConfiguration.storekit in Resources */,
 				BBCA9E6C2D946F6C00B3BE9B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,8 +193,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB87181F2D96801600918708 /* Customization+Extensions.swift in Sources */,
+				BBE7D2F02E30F00A00C87CFB /* TipJarView.swift in Sources */,
+				BBE7D2F22E30F9DC00C87CFB /* TipStore.swift in Sources */,
 				BBF17E632D9ECFB200679ECC /* AppState.swift in Sources */,
 				BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */,
+				BBE7D2F42E30FA0E00C87CFB /* Constants.swift in Sources */,
 				BBF17E6B2D9EE0BC00679ECC /* PopoverView.swift in Sources */,
 				BBCA9E6E2D946F6C00B3BE9B /* BarNotes.swift in Sources */,
 				BBE7D2E12E2F2A0600C87CFB /* AnimatableFontModifier.swift in Sources */,

@@ -15,6 +15,7 @@ struct BarNotes: App {
 		MenuBarExtra("BarNotes", systemImage: "inset.filled.circle") {
             ContentView()
 				.environment(AppState())
+				.environment(TipsStore())
 				.frame(width: 400, height: 350)
         }
 		.menuBarExtraStyle(.window)

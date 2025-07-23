@@ -22,6 +22,7 @@ struct ContentView: View {
 	@State private var notes = ""
 	@State private var savingTask: Task<Void, any Error>? = nil
 	@State private var showPopover = false
+	@State private var showTipJar = false
 	
 	let keychain = Keychain(service: "com.dextercode.BarNotes")
 	
@@ -43,9 +44,22 @@ struct ContentView: View {
 				}
 				.accessibilityLabel("Copy note")
 				.buttonStyle(.accessoryBar)
-				
 				Spacer()
-				
+				Button {
+					showTipJar.toggle()
+				} label: {
+					Image(systemName: "heart.fill")
+				}
+				.buttonStyle(.accessoryBar)
+				.accessibilityLabel("Tip Jar")
+				.help("Tip Jar")
+				.popover(
+					isPresented: $showTipJar,
+					attachmentAnchor: .point(.top),
+					arrowEdge: .bottom) {
+						TipJarView()
+					}
+				Spacer()
 				Button {
 					showPopover.toggle()
 				} label: {
@@ -62,6 +76,7 @@ struct ContentView: View {
 		}
 		.padding()
 		.tint(theme.fontColor)
+		.background(theme.bgColor)
 		.onChange(of: notes) { _, newValue in
 			saveNotes(newValue: newValue)
 		}

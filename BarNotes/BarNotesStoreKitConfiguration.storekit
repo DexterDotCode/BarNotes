@@ -1,0 +1,117 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "3CCD0DC6",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "6749001248",
+      "localizations" : [
+        {
+          "description" : "A crunchy little thank you",
+          "displayName" : "Chocolate Cookie",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.dextercode.BarNotes.ChocolateCookie",
+      "referenceName" : "Chocolate Cookie",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6749000613",
+      "localizations" : [
+        {
+          "description" : "A delightful boost that keeps me going",
+          "displayName" : "Cupcake Boost",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.dextercode.BarNotes.CupcakeBoost",
+      "referenceName" : "Cupcake Boost",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "6749000821",
+      "localizations" : [
+        {
+          "description" : "This isn’t just support - it’s a celebration!",
+          "displayName" : "Dessert Platter",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.dextercode.BarNotes.DessertPlatter",
+      "referenceName" : "Dessert Platter",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "6.99",
+      "familyShareable" : false,
+      "internalID" : "6749000816",
+      "localizations" : [
+        {
+          "description" : "A generous slice of appreciation",
+          "displayName" : "Slice of Cake",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.dextercode.BarNotes.SliceOfCake",
+      "referenceName" : "Slice Of Cake",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6749000610",
+      "localizations" : [
+        {
+          "description" : "Just a little something to sweeten the day",
+          "displayName" : "Tiny Treat",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.dextercode.BarNotes.TinyTreat",
+      "referenceName" : "Tiny Treat",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6744329261",
+    "_askToBuyEnabled" : false,
+    "_billingGracePeriodEnabled" : false,
+    "_billingIssuesEnabled" : false,
+    "_developerTeamID" : "RH7GF9MW76",
+    "_disableDialogs" : false,
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 774964422.32710695,
+    "_locale" : "en_US",
+    "_renewalBillingIssuesEnabled" : false,
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+
+    ],
+    "_timeRate" : 0
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}
