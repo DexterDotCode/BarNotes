@@ -42,9 +42,12 @@ struct ContentView: View {
 				} label: {
 					Image(systemName: "doc.on.doc")
 				}
-				.accessibilityLabel("Copy note")
 				.buttonStyle(.accessoryBar)
+				.accessibilityLabel("Copy note")
+				.help("Copy")
+
 				Spacer()
+				
 				Button {
 					showTipJar.toggle()
 				} label: {
@@ -53,25 +56,28 @@ struct ContentView: View {
 				.buttonStyle(.accessoryBar)
 				.accessibilityLabel("Tip Jar")
 				.help("Tip Jar")
-				.popover(
-					isPresented: $showTipJar,
-					attachmentAnchor: .point(.top),
-					arrowEdge: .bottom) {
-						TipJarView()
-					}
+				
 				Spacer()
+				
 				Button {
 					showPopover.toggle()
 				} label: {
 					Image(systemName: "ellipsis")
 				}
-				.accessibilityLabel("Show options")
 				.buttonStyle(.accessoryBar)
+				.accessibilityLabel("Show options")
+				.help("Options")
 			}
 			.popover(isPresented: $showPopover,
 					 attachmentAnchor: .point(.trailing),
 					 arrowEdge: .bottom) {
 				PopoverView(fontSize: $fontSize, theme: $theme, fontDesign: $fontDesign)
+			}
+			
+			.popover(isPresented: $showTipJar,
+					 attachmentAnchor: .point(.top),
+					 arrowEdge: .bottom) {
+				TipJarView()
 			}
 		}
 		.padding()
