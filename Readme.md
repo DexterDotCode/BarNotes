@@ -4,7 +4,7 @@
 	</a>
 	<h1>BarNotes</h1>
 	<p>
-		<b>BarNotes is a simple notes app which lives in your menubar</b>
+		<b>Tiny notes app in your menubar</b>
 	</p>
 	<br>
 </div>
@@ -21,17 +21,22 @@ A special version for users that cannot access the App Store. It won't receive a
 [Download](https://github.com/DexterDotCode/BarNotes/releases/tag/v!.0.0) *(1.0.0 · macOS 14+)*
 
 
-> [!NOTE]
+> [!IMPORTANT]
 > - On initial launch, Apple will asks for your system password to access keychain because BarNotes store your notes securely in keychain. 
 > - After Entering password click on 'Always Allow' to avoid this popup on every app launch.
 
-
+<!-- Features -->
 ## Features
-BarNotes can be used for pretty much anything.
+BarNotes is designed for people who value both simplicity and security.
 
-- Jot down your tasks
-- Using it as a scratchpad
-- For security the notes are encrypted with iCloud keychain, so you can also write your passwords **temporarily**
+• Built for Real Work:
+Whether you're capturing meeting notes, managing daily tasks, or brainstorming ideas, BarNotes provides instant access without disrupting your workflow. No bloated features—just fast, reliable note-taking exactly when you need it.
+
+• Thoughtfully Crafted Experience:
+Choose from multiple themes and typography options that suit your needs.
+
+• Security-First Architecture:
+Your notes are protected with iCloud Keychain encryption, making BarNotes suitable even for sensitive information like passwords. Your data remains private and accessible only to you.
 
 ![](Stuff/TopNotes-Main-photo.png)
 
