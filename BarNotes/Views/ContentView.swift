@@ -65,13 +65,13 @@ struct ContentView: View {
 					Image(systemName: "ellipsis")
 				}
 				.buttonStyle(.accessoryBar)
-				.accessibilityLabel("Show options")
-				.help("Options")
+				.accessibilityLabel("Settings")
+				.help("Settings")
 			}
 			.popover(isPresented: $showPopover,
 					 attachmentAnchor: .point(.trailing),
 					 arrowEdge: .bottom) {
-				PopoverView(fontSize: $fontSize, theme: $theme, fontDesign: $fontDesign)
+				Settings(fontSize: $fontSize, theme: $theme, fontDesign: $fontDesign)
 			}
 			
 			.popover(isPresented: $showTipJar,
@@ -95,6 +95,7 @@ struct ContentView: View {
 		.onAppear(perform: checkLaunchAtLoginStatus)
 		.onAppear(perform: loadNotes)
 	}
+	
 	
 	private func launchAtLoginByToggle(_ state: Bool) {
 		if state == true {
@@ -144,7 +145,6 @@ struct ContentView: View {
 	/// If there is currently a sleeping save task active, cancel it now to avoid multiple writes to the keychain.
 	private func saveNotes(newValue: String) {
 		savingTask?.cancel()
-		Logger.dataOperations.info("Previously running save task is cancelled")
 		
 		savingTask = Task {
 			try await Task.sleep(for: .seconds(1))

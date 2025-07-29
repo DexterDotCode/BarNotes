@@ -8,7 +8,7 @@
 import SwiftUI
 import StoreKit
 
-struct PopoverView: View {
+struct Settings: View {
 	@Environment(AppState.self) var appState
 	@Environment(\.openURL) private var openURL
 	

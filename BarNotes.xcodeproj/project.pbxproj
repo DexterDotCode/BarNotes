@@ -8,39 +8,41 @@
 
 /* Begin PBXBuildFile section */
 		BB3EAD262E38FCA10009833A /* MenuBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EAD252E38FCA10009833A /* MenuBarIcon.swift */; };
+		BB3EAD292E38FEBC0009833A /* FontDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EAD282E38FEBC0009833A /* FontDesign.swift */; };
 		BB5E3A9E2E2C2AB900F53E8B /* Logger+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5E3A9D2E2C2AB900F53E8B /* Logger+Ext.swift */; };
 		BB7F707A2E341063008DC84E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7F70792E341063008DC84E /* Constants.swift */; };
-		BB87181F2D96801600918708 /* Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB87181E2D96801600918708 /* Customization.swift */; };
+		BB87181F2D96801600918708 /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB87181E2D96801600918708 /* ThemeColors.swift */; };
 		BB87182C2D970AA000918708 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = BB87182B2D970AA000918708 /* KeychainAccess */; };
 		BBCA9E6B2D946F6C00B3BE9B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCA9E642D946F6C00B3BE9B /* Preview Assets.xcassets */; };
 		BBCA9E6C2D946F6C00B3BE9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCA9E662D946F6C00B3BE9B /* Assets.xcassets */; };
 		BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E672D946F6C00B3BE9B /* ContentView.swift */; };
 		BBCA9E6E2D946F6C00B3BE9B /* BarNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA9E692D946F6C00B3BE9B /* BarNotes.swift */; };
-		BBE7D2E12E2F2A0600C87CFB /* AnimatableFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7D2E02E2F2A0600C87CFB /* AnimatableFontModifier.swift */; };
+		BBE7D2E12E2F2A0600C87CFB /* AnimatableFontModifier+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7D2E02E2F2A0600C87CFB /* AnimatableFontModifier+Ext.swift */; };
 		BBE7D2F02E30F00A00C87CFB /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7D2EF2E30F00A00C87CFB /* TipJarView.swift */; };
 		BBE7D2F22E30F9DC00C87CFB /* TipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7D2F12E30F9DC00C87CFB /* TipStore.swift */; };
 		BBE7D2F62E31006500C87CFB /* BarNotesStoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = BBE7D2F52E31006500C87CFB /* BarNotesStoreKitConfiguration.storekit */; };
 		BBF17E632D9ECFB200679ECC /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF17E622D9ECFB200679ECC /* AppState.swift */; };
-		BBF17E6B2D9EE0BC00679ECC /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF17E6A2D9EE0BC00679ECC /* PopoverView.swift */; };
+		BBF17E6B2D9EE0BC00679ECC /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF17E6A2D9EE0BC00679ECC /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BB3EAD252E38FCA10009833A /* MenuBarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarIcon.swift; sourceTree = "<group>"; };
+		BB3EAD282E38FEBC0009833A /* FontDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontDesign.swift; sourceTree = "<group>"; };
 		BB5E3A9D2E2C2AB900F53E8B /* Logger+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Ext.swift"; sourceTree = "<group>"; };
 		BB7F70792E341063008DC84E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		BB87181E2D96801600918708 /* Customization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customization.swift; sourceTree = "<group>"; };
+		BB87181E2D96801600918708 /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
 		BBCA9E522D946F6100B3BE9B /* BarNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCA9E642D946F6C00B3BE9B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BBCA9E662D946F6C00B3BE9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBCA9E672D946F6C00B3BE9B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BBCA9E682D946F6C00B3BE9B /* BarNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BarNotes.entitlements; sourceTree = "<group>"; };
 		BBCA9E692D946F6C00B3BE9B /* BarNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarNotes.swift; sourceTree = "<group>"; };
-		BBE7D2E02E2F2A0600C87CFB /* AnimatableFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableFontModifier.swift; sourceTree = "<group>"; };
+		BBE7D2E02E2F2A0600C87CFB /* AnimatableFontModifier+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimatableFontModifier+Ext.swift"; sourceTree = "<group>"; };
 		BBE7D2EF2E30F00A00C87CFB /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
 		BBE7D2F12E30F9DC00C87CFB /* TipStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipStore.swift; sourceTree = "<group>"; };
 		BBE7D2F52E31006500C87CFB /* BarNotesStoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = BarNotesStoreKitConfiguration.storekit; sourceTree = "<group>"; };
 		BBF17E622D9ECFB200679ECC /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		BBF17E6A2D9EE0BC00679ECC /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		BBF17E6A2D9EE0BC00679ECC /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB3EAD272E38FE7B0009833A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BBF17E622D9ECFB200679ECC /* AppState.swift */,
+				BBE7D2F12E30F9DC00C87CFB /* TipStore.swift */,
+				BB87181E2D96801600918708 /* ThemeColors.swift */,
+				BB3EAD282E38FEBC0009833A /* FontDesign.swift */,
+				BB3EAD252E38FCA10009833A /* MenuBarIcon.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BBCA9E492D946F6100B3BE9B = {
 			isa = PBXGroup;
 			children = (
@@ -83,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				BBCA9E692D946F6C00B3BE9B /* BarNotes.swift */,
-				BBF17E622D9ECFB200679ECC /* AppState.swift */,
+				BB3EAD272E38FE7B0009833A /* Model */,
 				BBE7D2E32E2F2A2800C87CFB /* Views */,
 				BBE7D2E22E2F2A1A00C87CFB /* Support */,
 				BBCA9E652D946F6C00B3BE9B /* Preview Content */,
@@ -97,11 +111,9 @@
 		BBE7D2E22E2F2A1A00C87CFB /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				BBE7D2E02E2F2A0600C87CFB /* AnimatableFontModifier.swift */,
-				BB87181E2D96801600918708 /* Customization.swift */,
+				BBE7D2E02E2F2A0600C87CFB /* AnimatableFontModifier+Ext.swift */,
 				BB5E3A9D2E2C2AB900F53E8B /* Logger+Ext.swift */,
 				BB7F70792E341063008DC84E /* Constants.swift */,
-				BB3EAD252E38FCA10009833A /* MenuBarIcon.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -111,8 +123,7 @@
 			children = (
 				BBCA9E672D946F6C00B3BE9B /* ContentView.swift */,
 				BBE7D2EF2E30F00A00C87CFB /* TipJarView.swift */,
-				BBE7D2F12E30F9DC00C87CFB /* TipStore.swift */,
-				BBF17E6A2D9EE0BC00679ECC /* PopoverView.swift */,
+				BBF17E6A2D9EE0BC00679ECC /* Settings.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,16 +206,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB87181F2D96801600918708 /* Customization.swift in Sources */,
+				BB87181F2D96801600918708 /* ThemeColors.swift in Sources */,
 				BBE7D2F02E30F00A00C87CFB /* TipJarView.swift in Sources */,
 				BBE7D2F22E30F9DC00C87CFB /* TipStore.swift in Sources */,
 				BBF17E632D9ECFB200679ECC /* AppState.swift in Sources */,
+				BB3EAD292E38FEBC0009833A /* FontDesign.swift in Sources */,
 				BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */,
 				BB7F707A2E341063008DC84E /* Constants.swift in Sources */,
 				BB3EAD262E38FCA10009833A /* MenuBarIcon.swift in Sources */,
-				BBF17E6B2D9EE0BC00679ECC /* PopoverView.swift in Sources */,
+				BBF17E6B2D9EE0BC00679ECC /* Settings.swift in Sources */,
 				BBCA9E6E2D946F6C00B3BE9B /* BarNotes.swift in Sources */,
-				BBE7D2E12E2F2A0600C87CFB /* AnimatableFontModifier.swift in Sources */,
+				BBE7D2E12E2F2A0600C87CFB /* AnimatableFontModifier+Ext.swift in Sources */,
 				BB5E3A9E2E2C2AB900F53E8B /* Logger+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

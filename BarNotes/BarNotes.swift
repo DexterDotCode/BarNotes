@@ -10,7 +10,6 @@ import SwiftUI
 
 @main
 struct BarNotes: App {
-	
 	@AppStorage("menubarIcon") private var menubarIcon: MenuBarIcon = .pencil
 	
     var body: some Scene {
