@@ -34,6 +34,25 @@ struct TipJarView: View {
 		}
 		.scrollDisabled(true)
 		.frame(width: 370, height: 350, alignment: .topLeading)
+		.onChange(of: store.action) { _, action in
+			tippingSuccessful(action)
+		}
+		.alert(isPresented: Binding(
+			get: { store.hasError },
+			set: { store.hasError = $0 }
+		), error: store.error) { }
+	}
+	
+	/// Reseting the tip store if the purchase was successful so that user can buy tips multiple times
+	private func tippingSuccessful(_ action: TipsAction?) {
+		if action == .successful {
+			showTips = false
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+				showThanks.toggle()
+			}
+			
+			store.reset()
+		}
 	}
 }
 

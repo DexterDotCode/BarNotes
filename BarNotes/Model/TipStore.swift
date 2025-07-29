@@ -65,13 +65,18 @@ enum TipsAction: Equatable {
 	private(set) var action: TipsAction? {
 		didSet {
 			switch action {
-				case .failed: hasError = true
-				default: hasError = false
+				case .failed:
+					hasError = true
+				default:
+					hasError = false
 			}
 		}
 	}
+	
 	var hasError = false
+	
 	private var transactionListener: TransactionLister?
+	
 	var error: TipsError? {
 		switch action {
 			case .failed(let err):
@@ -85,10 +90,6 @@ enum TipsAction: Equatable {
 		transactionListener = configureTransactionListener()
 		Task { await retrieveProducts() }
 	}
-	
-//	deinit {
-//		transactionListener?.cancel()
-//	}
 	
 	func purchase(_ item: Product) async {
 		do {
