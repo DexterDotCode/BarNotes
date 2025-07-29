@@ -1,43 +1,47 @@
+<!--BarNotes Logo -->
+
 <div align="center">
 	<a href="https://dextercode.craft.me/BarNotes">
-		<img src="Stuff/AppIcon-readme.png" width="200" height="200">
+		<img src="Stuff/BarNotes-GithubReadmeIcon200.png" width="200" height="200">
 	</a>
 	<h1>BarNotes</h1>
 	<p>
-		<b>BarNotes is a simple notes app which lives in your menubar</b>
+		<b>Tiny notes app in your menubar</b>
 	</p>
 	<br>
 </div>
 
+<!--Downloads-->
 ## Download
 <a href="https://apps.apple.com/in/app/barnotes/id6744329261?mt=12" target="_self"><img width="200" src="Stuff/appStore-download-logo.svg" /></a>
-
-
 
 ### Non-App Store version
 
 A special version for users that cannot access the App Store. It won't receive automatic updates. But I will update it here whenever new version releases.
 
-[Download](https://github.com/DexterDotCode/BarNotes/releases/tag/v!.0.0) *(1.0.0 · macOS 14+)*
+[Download](https://github.com/DexterDotCode/BarNotes/releases/tag/v1.1) *(1.1 • macOS 14+)*
 
 
-> [!NOTE]
+> [!IMPORTANT]
 > - On initial launch, Apple will asks for your system password to access keychain because BarNotes store your notes securely in keychain. 
 > - After Entering password click on 'Always Allow' to avoid this popup on every app launch.
 
-
+<!-- Features -->
 ## Features
-BarNotes can be used for pretty much anything.
+BarNotes is designed for people who value both simplicity and security.
 
-- Jot down your tasks
-- Using it as a scratchpad
-- For security the notes are encrypted with iCloud keychain, so you can also write your passwords **temporarily**
+- **Built for Real Work:** Whether you're capturing meeting notes, managing daily tasks, or brainstorming ideas, BarNotes provides instant access without disrupting your workflow. No bloated features—just fast, reliable note-taking exactly when you need it.
+- **Thoughtfully Crafted Experience:** Choose from multiple themes and typography options that suit your needs.
+- **Security-First Architecture:** Your notes are protected with iCloud Keychain encryption, making BarNotes suitable even for sensitive information like passwords. Your data remains private and accessible only to you.
 
-![](Stuff/TopNotes-Main-photo.png)
+![](Stuff/BarNotesAppStoreMockup-1.png)
+![](Stuff/BarNotesAppStoreMockup-2.png)
 
+<!--BMAC-->
 ## Buy Me A Coffee
 <a href="https://www.buymeacoffee.com/dextercode" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
+<!--Installation and Instructions-->
 ## Installation
 
 1. **Clone the Repository**:
@@ -52,9 +56,9 @@ BarNotes can be used for pretty much anything.
    ```
 
 3. **Build and Run**:
-    - Select your target device.
-    - Click the "Run" button or press `Cmd + R`.
-    - Start taking notes
+   - Select your target device.
+   - Click the "Run" button or press `Cmd + R`.
+   - Start taking notes
     
 ## Terms & Privacy
 - Everything you enter in the app is stored on your device, and synced to your other devices using your iCloud keychain. 

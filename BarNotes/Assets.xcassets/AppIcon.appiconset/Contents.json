@@ -7,13 +7,13 @@
       "size" : "16x16"
     },
     {
-      "filename" : "BarNotes-AppIcon32 1.png",
+      "filename" : "BarNotes-AppIcon32.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
-      "filename" : "BarNotes-AppIcon32.png",
+      "filename" : "BarNotes-AppIcon32 1.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
@@ -31,25 +31,25 @@
       "size" : "128x128"
     },
     {
-      "filename" : "BarNotes-AppIcon256 1.png",
+      "filename" : "BarNotes-AppIcon256.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
-      "filename" : "BarNotes-AppIcon256.png",
+      "filename" : "BarNotes-AppIcon256 1.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
-      "filename" : "BarNotes-AppIcon512 1.png",
+      "filename" : "BarNotes-AppIcon512.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
-      "filename" : "BarNotes-AppIcon512.png",
+      "filename" : "BarNotes-AppIcon512 1.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
