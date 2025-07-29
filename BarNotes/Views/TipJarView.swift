@@ -18,23 +18,25 @@ struct TipJarView: View {
 		List {
 			VStack(spacing: 10) {
 				Text("Loving the app so far?")
-					.font(.system(.title2, design: .rounded).bold())
-					.multilineTextAlignment(.center)
+					.font(.title2)
+					.bold()
 				
 				Text("I build this app with love. If it made you smile, you can send a sweet little thank you my way! 🍫")
-					.font(.system(.body, design: .rounded))
-					.multilineTextAlignment(.center)
+					.font(.body)
 					.padding(.bottom, 16)
 				
 				ForEach(store.items) { item in
 					TipRow(item)
 				}
 			}
+			.fontDesign(.rounded)
+			.multilineTextAlignment(.center)
 		}
 		.scrollDisabled(true)
 		.frame(width: 370, height: 350, alignment: .topLeading)
 	}
 }
+
 
 #Preview {
 	TipJarView()
@@ -48,17 +50,17 @@ private extension TipJarView {
 		HStack {
 			VStack(alignment: .leading, spacing: 5) {
 				Text(item.displayName)
-					.font(.system(.title3, design: .rounded).bold())
+					.font(.headline)
 				Text(item.description)
-					.font(.system(.callout, design: .rounded).weight(.regular))
+					.font(.subheadline)
 			}
+			.fontDesign(.rounded)
 			
 			Spacer()
 			
 			Button(item.displayPrice) {
 				Task { await store.purchase(item) }
 			}
-			.tint(.blue)
 			.buttonStyle(.bordered)
 			.font(.callout.bold())
 		}

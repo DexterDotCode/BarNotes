@@ -15,6 +15,7 @@ struct PopoverView: View {
 	@Binding var fontSize: Double
 	@Binding var theme: ThemeColors
 	@Binding var fontDesign: FontDesign
+	@AppStorage("menubarIcon") private var menubarIcon: MenuBarIcon = .pencil
 	
 	var body: some View {
 		@Bindable var appState = appState
@@ -23,8 +24,9 @@ struct PopoverView: View {
 			VStack(alignment: .leading, spacing: 25) {
 				HStack {
 					Text("Font Size")
-						.fontWeight(.medium)
+
 					Spacer()
+					
 					ControlGroup {
 						Button("Decrease font size", systemImage: "minus") {
 							withAnimation(.spring) { fontSize -= 1 }
@@ -41,17 +43,22 @@ struct PopoverView: View {
 						Text(font.description)
 					}
 				}
-				.fontWeight(.medium)
 				
 				Picker("Background Color", selection: $theme) {
 					ForEach(ThemeColors.allCases) { bgColor in
 						Text(bgColor.bgColorLabel)
 					}
+					
 				}
-				.fontWeight(.medium)
+				
+				Picker("Menu Bar Icon", selection: $menubarIcon) {
+					ForEach(MenuBarIcon.allCases) { menubarIcon in
+						Image(systemName: menubarIcon.icon)
+							.tint(.primary)
+					}
+ 				}
 				
 				Toggle("Launch at login", isOn: $appState.launchAtLogin)
-					.fontWeight(.medium)
 					.toggleStyle(.switch)
 				
 				Spacer()
@@ -59,8 +66,9 @@ struct PopoverView: View {
 				HStack {
 					Link(destination: URL(string: "https://github.com/dexterdotcode/barnotes")!) {
 						Text("Github")
-							.fontWeight(.medium)
 					}
+					.tint(.blue)
+					.buttonStyle(.accessoryBar)
 					
 					Spacer()
 					
@@ -68,7 +76,6 @@ struct PopoverView: View {
 						let url = URL(string: "https://apps.apple.com/app/id6744329261?action=write-review")!
 						openURL(url)
 					}
-					.fontWeight(.medium)
 					.buttonStyle(.bordered)
 					
 					Spacer()
@@ -76,13 +83,13 @@ struct PopoverView: View {
 					Button("Quit") {
 						NSApp.terminate(nil)
 					}
-					.fontWeight(.medium)
 					.tint(.red)
 					.buttonStyle(.accessoryBar)
 				}
 			}
+			.fontWeight(.medium)
 		}
 		.scrollDisabled(true)
-		.frame(width: 370, height: 285, alignment: .topLeading)
+		.frame(width: 370, height: 330, alignment: .topLeading)
 	}
 }

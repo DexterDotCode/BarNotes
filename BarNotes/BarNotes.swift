@@ -11,8 +11,10 @@ import SwiftUI
 @main
 struct BarNotes: App {
 	
+	@AppStorage("menubarIcon") private var menubarIcon: MenuBarIcon = .pencil
+	
     var body: some Scene {
-		MenuBarExtra("BarNotes", systemImage: "pencil") {
+		MenuBarExtra("BarNotes", systemImage: menubarIcon.icon) {
             ContentView()
 				.environment(AppState())
 				.environment(TipsStore())
@@ -21,3 +23,6 @@ struct BarNotes: App {
 		.menuBarExtraStyle(.window)
     }
 }
+
+
+

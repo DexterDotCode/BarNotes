@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB3EAD262E38FCA10009833A /* MenuBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EAD252E38FCA10009833A /* MenuBarIcon.swift */; };
 		BB5E3A9E2E2C2AB900F53E8B /* Logger+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5E3A9D2E2C2AB900F53E8B /* Logger+Ext.swift */; };
 		BB7F707A2E341063008DC84E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7F70792E341063008DC84E /* Constants.swift */; };
 		BB87181F2D96801600918708 /* Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB87181E2D96801600918708 /* Customization.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB3EAD252E38FCA10009833A /* MenuBarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarIcon.swift; sourceTree = "<group>"; };
 		BB5E3A9D2E2C2AB900F53E8B /* Logger+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Ext.swift"; sourceTree = "<group>"; };
 		BB7F70792E341063008DC84E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BB87181E2D96801600918708 /* Customization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customization.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				BB87181E2D96801600918708 /* Customization.swift */,
 				BB5E3A9D2E2C2AB900F53E8B /* Logger+Ext.swift */,
 				BB7F70792E341063008DC84E /* Constants.swift */,
+				BB3EAD252E38FCA10009833A /* MenuBarIcon.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				BBF17E632D9ECFB200679ECC /* AppState.swift in Sources */,
 				BBCA9E6D2D946F6C00B3BE9B /* ContentView.swift in Sources */,
 				BB7F707A2E341063008DC84E /* Constants.swift in Sources */,
+				BB3EAD262E38FCA10009833A /* MenuBarIcon.swift in Sources */,
 				BBF17E6B2D9EE0BC00679ECC /* PopoverView.swift in Sources */,
 				BBCA9E6E2D946F6C00B3BE9B /* BarNotes.swift in Sources */,
 				BBE7D2E12E2F2A0600C87CFB /* AnimatableFontModifier.swift in Sources */,
