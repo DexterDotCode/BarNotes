@@ -10,7 +10,7 @@ import StoreKit
 
 struct PopoverView: View {
 	@Environment(AppState.self) var appState
-	@Environment(\.requestReview) var requestReview
+	@Environment(\.openURL) private var openURL
 	
 	@Binding var fontSize: Double
 	@Binding var theme: ThemeColors
@@ -54,17 +54,22 @@ struct PopoverView: View {
 					.fontWeight(.medium)
 					.toggleStyle(.switch)
 				
-				Button("Rate BarNotes") {
-					requestReview()
-				}
-				.fontWeight(.medium)
-				.buttonStyle(.bordered)
+				Spacer()
 				
 				HStack {
 					Link(destination: URL(string: "https://github.com/dexterdotcode/barnotes")!) {
 						Text("Github")
 							.fontWeight(.medium)
 					}
+					
+					Spacer()
+					
+					Button("Leave a Review") {
+						let url = URL(string: "https://apps.apple.com/app/id6744329261?action=write-review")!
+						openURL(url)
+					}
+					.fontWeight(.medium)
+					.buttonStyle(.bordered)
 					
 					Spacer()
 					
@@ -78,6 +83,6 @@ struct PopoverView: View {
 			}
 		}
 		.scrollDisabled(true)
-		.frame(width: 370, height: 300, alignment: .topLeading)
+		.frame(width: 370, height: 285, alignment: .topLeading)
 	}
 }

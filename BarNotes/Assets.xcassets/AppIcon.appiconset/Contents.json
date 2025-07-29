@@ -1,61 +1,61 @@
 {
   "images" : [
     {
-      "filename" : "mac7.png",
+      "filename" : "BarNotes-AppIcon16.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
-      "filename" : "mac6 1.png",
+      "filename" : "BarNotes-AppIcon32 1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
-      "filename" : "mac6.png",
+      "filename" : "BarNotes-AppIcon32.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
-      "filename" : "mac5.png",
+      "filename" : "BarNotes-AppIcon64.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"
     },
     {
-      "filename" : "mac4.png",
+      "filename" : "BarNotes-AppIcon128.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
-      "filename" : "mac3 1.png",
+      "filename" : "BarNotes-AppIcon256 1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
-      "filename" : "mac3.png",
+      "filename" : "BarNotes-AppIcon256.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
-      "filename" : "mac2 1.png",
+      "filename" : "BarNotes-AppIcon512 1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
-      "filename" : "mac2.png",
+      "filename" : "BarNotes-AppIcon512.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
-      "filename" : "Untitled 4.png",
+      "filename" : "BarNotes-AppIcon1024.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

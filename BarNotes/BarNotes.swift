@@ -12,7 +12,7 @@ import SwiftUI
 struct BarNotes: App {
 	
     var body: some Scene {
-		MenuBarExtra("BarNotes", systemImage: "inset.filled.circle") {
+		MenuBarExtra("BarNotes", systemImage: "pencil") {
             ContentView()
 				.environment(AppState())
 				.environment(TipsStore())
